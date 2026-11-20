@@ -1,0 +1,66 @@
+markdown-slides-zh（Markdown一键转课件）1.0.0
+
+本目录里的自写文件由 Kevin技能工坊编写，适用根目录 MIT（见 LICENSE）。
+自写范围是：SKILL.md、README.md、scripts/convert.mjs、tests/、
+themes/zh-business.css、themes/zh-simple.css，以及 examples/ 中的虚构讲稿。
+主题 CSS 是自写的，只 @import 上游内置的 default 主题，不包含收费模板。
+
+本包不内嵌、也不重新许可上游源码。Marp CLI、Marp Core、Marpit、Puppeteer
+都不是 Kevin技能工坊的原创作品。请勿把上游代码改署为 Kevin 独创，也不要把
+Marp 或 Marpit 用作本工具的商品名。本工具不是 Marp team 的官方产品，不表示其
+认可或背书。上述说明不是法律意见。
+
+依赖由使用者在 scripts/ 执行 npm ci（或 npm install）安装，版本以
+scripts/package-lock.json 为准。下面的核对日是 2026-11-20（Asia/Shanghai）。
+
+== 直接依赖 ==
+@marp-team/marp-cli 4.5.1 — MIT
+  发布包 LICENSE、GitHub 标签 v4.5.1 与同日 main 分支 LICENSE 一致，
+  并与 licenses/MIT.txt 逐字节一致（© 2018 Marp team）。
+  https://github.com/marp-team/marp-cli
+  命令入口是包根目录的 marp-cli.js。
+  其 package.json 还直接依赖下面这些锁定版本。
+
+== 直接依赖的锁定版本（由 marp-cli 4.5.1 引入，不随本包分发）==
+@marp-team/marp-core 4.4.0 — MIT
+  发布包 LICENSE 为 MIT，版权行是 © 2018 Marp team。
+  https://github.com/marp-team/marp-core
+@marp-team/marpit 3.2.3 — MIT
+  发布包 LICENSE 为 MIT，版权行是 © 2018- Marp team（与 marp-cli 的「2018」写法不同，保留原样）。
+  https://github.com/marp-team/marpit
+chokidar 4.0.3 — MIT（© 2012 Paul Miller, Elan Shanker）
+cosmiconfig 9.0.2 — MIT（© 2015 David Clark）
+puppeteer-core 24.43.1 — Apache-2.0
+  npm license 字段为 Apache-2.0，author 为 The Chromium Authors。
+  该版本的 npm 发布包里没有 LICENSE 文件。
+  gitHead 970bda63c03d96b7a42d96fe44e35da1b4dc4a8b 的仓库 LICENSE
+  与 licenses/Apache-2.0.txt 逐字节一致，附录含 Copyright 2017 Google Inc.
+  https://github.com/puppeteer/puppeteer
+  puppeteer-core 不捆绑浏览器。导出 PDF、PPTX、PNG 时使用本机已安装的浏览器。
+serve-index 1.9.2 — MIT（© 2010 Sencha Inc. / © 2011 LearnBoost 等，以发布包 LICENSE 为准）
+tmp 0.2.7 — MIT（© 2014 KARASZI István）
+ws 8.22.2 — MIT（© 2011 Einar Otto Stangvik 等，以发布包 LICENSE 为准）
+
+== 传递依赖（不随本包分发）==
+argparse 3.0.4 — PSF-2.0，发布包 LICENSE 与 licenses/PSF-2.0.txt 逐字节一致。
+argparse 2.0.1 — Python-2.0，发布包 LICENSE 与 licenses/Python-2.0.txt 逐字节一致
+  （cosmiconfig 与 markdown-it 各自的嵌套依赖）。
+mathjax-full 3.2.2 — Apache-2.0（由 marp-core 拉取，用于公式）。
+  npm 已标记该包名被 @mathjax/src 取代，但本 lockfile 仍安装 3.2.2。
+  其发布包 LICENSE 是 Apache-2.0 标准文本（http 链接、附录为占位版权行），
+  与本目录为 Puppeteer 保存的 licenses/Apache-2.0.txt 不是同一份文件。
+mhchemparser 4.2.1、mj-context-menu 0.6.1、speech-rule-engine 4.1.5 — Apache-2.0。
+esm 3.2.25 — MIT。
+
+2026-11-20 统计 scripts/package-lock.json 的 license 字段：MIT、MIT-0、Apache-2.0、
+ISC、BSD-3-Clause、BSD-2-Clause、0BSD、PSF-2.0、Python-2.0。
+未看到 GPL、AGPL 或 LGPL 字段。除上面点名的发布包和 git 提交外，其余传递依赖
+没有逐个打开 LICENSE 原文。
+
+== 本目录附带的许可证全文 ==
+licenses/MIT.txt          — marp-cli 4.5.1 LICENSE 原文（© 2018 Marp team）
+licenses/Apache-2.0.txt   — puppeteer 仓库在 puppeteer-core@24.43.1 gitHead 上的 LICENSE
+licenses/PSF-2.0.txt      — argparse 3.0.4 LICENSE 原文
+licenses/Python-2.0.txt   — argparse 2.0.1 LICENSE 原文
+
+浏览器本体（Chrome、Chromium、Edge、Firefox）适用各自许可证，本包不分发浏览器。
