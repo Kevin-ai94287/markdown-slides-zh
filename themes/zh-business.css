@@ -1,0 +1,137 @@
+/* @theme zh-business */
+/*
+  Kevin技能工坊自写中文商务主题，MIT。
+  可引用 Marp 内置 default（MIT）。用于培训、汇报、路演。
+*/
+@import 'default';
+
+:root {
+  --zb-bg: #f7f5f0;
+  --zb-card: #ffffff;
+  --zb-ink: #1c1917;
+  --zb-muted: #57534e;
+  --zb-accent: #0f4c5c;
+  --zb-accent-soft: #e6eef0;
+  --zb-line: #d6d3d1;
+}
+
+section {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  background: var(--zb-bg);
+  color: var(--zb-ink);
+  font-size: 28px;
+  line-height: 1.55;
+  padding: 56px 72px 72px;
+  letter-spacing: 0.02em;
+}
+
+section::after {
+  color: var(--zb-muted);
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, p, ul, ol, blockquote, table {
+  font-family: inherit;
+}
+
+h1 {
+  color: var(--zb-accent);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.45em;
+}
+
+h2 {
+  color: var(--zb-accent);
+  font-size: 36px;
+  font-weight: 650;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  color: var(--zb-ink);
+  font-size: 28px;
+  margin-bottom: 0.4em;
+}
+
+p, li {
+  color: var(--zb-ink);
+}
+
+ul, ol {
+  padding-left: 1.2em;
+}
+
+li + li {
+  margin-top: 0.28em;
+}
+
+strong {
+  color: var(--zb-accent);
+  font-weight: 650;
+}
+
+a {
+  color: var(--zb-accent);
+}
+
+blockquote {
+  border-left: 6px solid var(--zb-accent);
+  background: var(--zb-accent-soft);
+  color: var(--zb-ink);
+  padding: 0.4em 0.8em;
+  margin: 0.6em 0;
+}
+
+code, pre {
+  font-family: "Sarasa Mono SC", "Microsoft YaHei Mono", "Source Han Mono SC", ui-monospace, monospace;
+  background: var(--zb-accent-soft);
+}
+
+table {
+  font-size: 22px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--zb-line);
+  padding: 0.35em 0.55em;
+}
+
+th {
+  background: var(--zb-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+header, footer {
+  color: var(--zb-muted);
+  font-size: 16px;
+  letter-spacing: 0.04em;
+}
+
+/* 封面：首屏只有标题时可更疏朗 */
+section.lead, section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--zb-accent);
+  color: #fff;
+  padding: 80px 72px;
+}
+
+section.lead h1, section.title h1,
+section.lead h2, section.title h2,
+section.lead p, section.title p {
+  color: #fff;
+}
+
+section.lead h1, section.title h1 {
+  font-size: 58px;
+}
+
+section.lead strong, section.title strong {
+  color: #fff;
+}

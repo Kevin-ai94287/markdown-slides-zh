@@ -1,0 +1,16 @@
+{
+  "name": "markdown-slides-zh-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Runtime deps for Markdown一键转课件 (Kevin技能工坊). Pins @marp-team/marp-cli.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test ../tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "dependencies": {
+    "@marp-team/marp-cli": "4.5.1"
+  }
+}
